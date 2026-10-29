@@ -46,14 +46,25 @@ def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
     head.move(aim)
-         
-    if not inside(head) or head in snake:
+      
+#  2: Atravesar los bordes (Wrapping) 
+    if head.x < -200:
+        head.x = 190
+    elif head.x > 190:
+        head.x = -200
+    
+    if head.y < -200:
+        head.y = 190
+    elif head.y > 190:
+        head.y = -200
+
+    # Validar si choca contra su propio cuerpo 
+    if head in snake:
         square(head.x, head.y, 9, 'red')
         update()
         return
-    
+        
     snake.append(head)
-
 
 
     if head == food:
