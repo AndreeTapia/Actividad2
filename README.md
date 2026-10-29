@@ -5,5 +5,6 @@ Fer Arriaga:<rb>
 -  Hacer que la serpiente atraviese los bordes del mapa.<rb>
 AndreeTapia:<rb>
 - Agrega la función de mover la comida aleatoriamente.<rb>
-- Change the snake to respond to mouse clicks.
+- Agrega la función que permite mover a la serpiente con clicks de mouse.<rb>
+- Elimina las funciones que movian a la serpiente con teclas.
  
