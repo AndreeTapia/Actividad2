@@ -1,9 +1,9 @@
-# Actividad2
+# Actividad 2
 
-Fer Arriaga
-1. Implementar control interactivo de velocidad con w y s 
-2. Hacer que la serpiente atraviese los bordes del mapa
-
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
+Fer Arriaga:<rb>
+-  Implementar control interactivo de velocidad con w y s.<rb> 
+-  Hacer que la serpiente atraviese los bordes del mapa.<rb>
+AndreeTapia:<rb>
+- Agrega la función de mover la comida aleatoriamente.<rb>
+- Change the snake to respond to mouse clicks.
  
