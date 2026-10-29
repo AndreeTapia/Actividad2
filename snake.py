@@ -23,23 +23,38 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
-
 def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+# Variable global para controlar la velocidad (milisegundos de retraso)
+speed_delay = 100
+
+def accelerate():
+    """Acelera la serpiente disminuyendo el retraso."""
+    global speed_delay
+    if speed_delay > 20:
+        speed_delay -= 10
+
+def slow_down():
+    """Frena la serpiente aumentando el retraso."""
+    global speed_delay
+    speed_delay += 10
+
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
     head.move(aim)
-
+         
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
         return
-
+    
     snake.append(head)
+
+
 
     if head == food:
         print('Snake:', len(snake))
@@ -55,7 +70,8 @@ def move():
 
     square(food.x, food.y, 9, 'green')
     update()
-    ontimer(move, 100)
+
+    ontimer(move, speed_delay)
 
 
 setup(420, 420, 370, 0)
@@ -66,5 +82,7 @@ onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+onkey(accelerate, 'w')
+onkey(slow_down, 's')
 move()
 done()
