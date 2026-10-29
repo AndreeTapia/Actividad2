@@ -74,6 +74,14 @@ def move():
     else:
         snake.pop(0)
 
+# Funcion para mover la comida aleatoriamente.
+    food.x += randrange(-1, 2) * 10
+    food.y += randrange(-1, 2) * 10
+
+    if not inside(food):
+      food.x = randrange(-15, 15) * 10
+      food.y = randrange(-15, 15) * 10
+
     clear()
 
     for body in snake:
