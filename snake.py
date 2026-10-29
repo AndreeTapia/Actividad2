@@ -92,15 +92,25 @@ def move():
 
     ontimer(move, speed_delay)
 
+def tap(x, y):
+    """Change direction based on clicks position."""
+    if abs(x) > abs(y):
+        if x > 0:
+            change(10, 0)
+        else:
+            change(-10, 0)
+
+    else:
+        if y > 0:
+            change(0, 10)
+        else:
+            change(0, -10)
 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: change(10, 0), 'Right')
-onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0, 10), 'Up')
-onkey(lambda: change(0, -10), 'Down')
+onscreenclick(tap)
 onkey(accelerate, 'w')
 onkey(slow_down, 's')
 move()
